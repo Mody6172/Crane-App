@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Cranes Project</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- first screen -->
+        <div class="first-screen">
+            <div class="row" data-toggle="tooltip">
+                <div class="col-sm">
+                    <!-- <h6>Hieghts in Meter</h6> -->
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Load Height">
+                        <label for="load-height" class="labels">Load Height(m):</label>
+                        <input type="number" class="form-control" id="load-height" placeholder="enter a value">
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Obstacle Height, (if any)">
+                        <label for="obs-height" class="labels">Load Width(m):</label>
+                        <input type="number" class="form-control" id="obs-height" placeholder="enter a value">
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Raising Height">
+                        <label for="building-height" class="labels">Raising Height(m):</label>
+                        <input type="number" class="form-control" id="building-height" placeholder="enter a value">
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Safety Height">
+                        <label for="safety-height" class="labels">Safety Factor(%):</label>
+                        <div class="range-div">
+                            <input type="range" id="safety-height" min="0" max="10" value=0 style="width:160px;" />
+                            <span class="range-output">0</span>
+                        </div>
+                        <!-- <input type="number" class="form-control" id="safety-height" placeholder="enter a value"> -->
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Sling Height">
+                        <label for="sling-height" class="labels">Sling Height(m):</label>
+                        <input type="number" class="form-control" id="sling-height" readonly>
+                    </div>
+
+                </div>
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Object Weight">
+                        <label for="obj-weight" class="labels">Object Weight(ton):</label>
+                        <input type="number" class="form-control" id="obj-weight" placeholder="enter a value">
+                    </div>
+                    <!-- <div class="input-group mb-3" data-toggle="tooltip" title="Hook Weight">
+                        <label for="hook-weight" class="labels">Hook Weight(ton):</label>
+                        <input type="number" class="form-control" id="hook-weight" placeholder="enter a value">
+                    </div> -->
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Sling Weight">
+                        <label for="add-weight" class="labels">Sling Weight(ton):</label>
+                        <input type="number" class="form-control" id="add-weight" placeholder="enter a value">
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="safety Weight">
+                        <label for="safety-weight" class="labels">Safety Factor(%):</label>
+                        <div class="range-div">
+                            <input id="safety-weight" type="range" min="0" max="10" value=0 style="width:160px;" />
+                            <span class="range-output">0</span>
+                            <!-- <input type="number" class="form-control" id="safety-weight" placeholder="enter a value"
+                                readonly> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Distance from Building Edge">
+                        <label for="edge-dist" class="labels">Distance to Building Edge(m):</label>
+                        <input type="number" class="form-control" id="edge-dist" placeholder="enter a value">
+                    </div>
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Radios of Work">
+                        <label for="rad-weight" class="labels">Radius of Work(m):</label>
+
+                        <input type="number" class="form-control" id="rad-work" placeholder="enter a value">
+                    </div>
+                    <!-- <div class="input-group mb-3" data-toggle="tooltip" title="minimum site width">
+                    <input type="number" class="form-control" id="min-site-width" placeholder="Minimum site width">
+                </div>
+                <div class="input-group mb-3" data-toggle="toltip" title="minimum site length">
+                    <input type="number" class="form-control" id="min-site-length" placeholder="Minimum site length">
+                </div> -->
+                </div>
+            </div>
+            <hr class="h-divider" />
+            <div class="row">
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Total Height">
+                        <label for="total-height" class="labels">Total Height(m):</label>
+                        <input type="number" class="form-control" id="total-height" placeholder="Total Height" readonly>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Total Weight">
+                        <label for="total-weight" class="labels">Total Weight(ton):</label>
+                        <input type="number" class="form-control" id="total-weight" placeholder="Total Weight" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Boom Angle">
+                        <label for="boom-angle" class="labels">Boom Angle(<span>&#176;</span>):</label>
+                        <input type="number" class="form-control" id="boom-angle" placeholder="Boom Angle" readonly>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="input-group mb-3" data-toggle="tooltip" title="Boom Length">
+                        <label for="boom-length" class="labels">Boom Length(m):</label>
+                        <input type="number" class="form-control" id="boom-length" placeholder="Boom Length" readonly>
+                    </div>
+                </div>
+            </div>
+            <hr class="h-divider" />
+            <div>
+                <div class="row">
+                    <div class="col-md">
+                        <button class='btn btn-block btn-outline-danger' id="clear-inputs"> Clear All Inputs</button>
+                    </div>
+                    <div class="col-md">
+                        <button class='btn btn-block btn-outline-info' id="more-info"> More Information</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- first screen code ends here -->
+
+        <!-- second screen -->
+
+        <div class="second-screen cranes">
+            <div class="card-group">
+
+            </div>
+        </div>
+        <!-- <hr class="h-divider" /> -->
+
+        <!-- second screen code ends here -->
+
+
+        <!-- third screen -->
+
+        <div class="third-screen compare">
+            <h2 id='comparision-table-title'>cranes comparision table</h2>
+            <h5 class="category">Financial</h5>
+            <table class="table table-striped table-bordered rental">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="table-headers">Crane Name</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Rental Cost per Day</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Size and Number of Cranes</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Cranes Availability in the Market</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <hr class="h-divider" />
+            <h5 class="category">Managerial</h5>
+            <table class="table table-striped table-bordered managerial">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="table-headers">Crane Name</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Construction Schedule</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Work Productivity</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Safety</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Availability of Technical Support</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <hr class="h-divider" />
+            <h5 class="category">Site Condition</h5>
+            <table class="table table-striped table-bordered site-condition">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="table-headers">Crane Name</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Site Accessibility</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Site Preparation</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Weather Condition</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Working and Maneuvering Space</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <hr class="h-divider" />
+            <h5 class="category">Environmental</h5>
+            <table class="table table-striped table-bordered environmental">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" class="table-headers">Crane Name</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Energy Consumption</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Health Issues</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            CO2 Emmissions</th>
+                        <th scope="col" class="table-headers"> <input type="checkbox" class="comparision-flag" checked>
+                            Neighbor Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- <hr class="h-divider" /> -->
+
+        <!-- third screen code ends here -->
+
+        <div class="row controls">
+            <div class="col-sm">
+                <button class="btn btn-outline-secondary btn-block" id="back-button" disabled> Back </button>
+            </div>
+            <div class="col-sm">
+                <button class="btn btn-outline-success btn-block" id="next-button"> Next </button>
+            </div>
+        </div>
+    </div>
+    <!-- Best Cranes Modal -->
+    <div class="modal fade" id="best-crane-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="best-crane-modal-title">BEST CARNE BASED ON YOUR VALUES IS:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- More Information Modal -->
+    <div class="modal fade" id="more-information-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="best-crane-modal-title">Labels Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="container-fluid">
+                        <div class="row">
+                            <img src="imgs/Drawing1.jpg" height="425px" width="425px" alt="image not available"
+                                style="transform:rotate(-90deg); margin:auto;">
+                        </div>
+                        <hr class="h-divider" />
+                        <div class="row">
+                            <div class="col-sm">
+                                <ul>
+                                    <li>
+                                        <b>Load Height:</b> It is the height of the object expected to be raised.
+                                    </li>
+                                    <li><b>Load Width:</b> it is the width of the object expected to be raised.</li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm">
+                                <ul>
+                                    <li><b>Load Depth:</b> It is the depth of the object expected to be raised.</li>
+                                    <li><b>Sling Height:</b> It is the Height of the sling used to raise the object.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="h-divider" />
+                    <div class="row">
+                        <img src="imgs/Drawing2.jpg" height="775px" width="775px" alt="image not available"
+                            style="transform:rotate(-90deg); margin:auto;">
+                    </div>
+                    <hr class="h-divider" />
+                    <div class="row">
+                        <div class="col-md">
+                            <ul>
+                                <li>
+                                    <b>Raising Height:</b> The total Height of the Building.
+                                </li>
+                                <li>
+                                    <b>Safety Height:</b> Extra Height used for safety purposes.
+                                </li>
+                                <li>
+                                    <b>Object Weight:</b> The weight of the object to be raised in tonnage.
+                                </li>
+                                <li>
+                                    <b>Sling Weight:</b> The weight of the sling used to raise the object in tonnage.
+                                </li>
+                                <li>
+                                    <b>Safety weight:</b> It is calculated so that the entered weight is 85% of total
+                                    weight.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md">
+                            <ul>
+                                <li>
+                                    <b>Distance to the building edge:</b> The distance between the crane center and the
+                                    edge of the building.
+                                </li>
+                                <li>
+                                    <b>Radius of work:</b> the distance between crane center and center of location of
+                                    the object to be installed.
+                                </li>
+                                <li>
+                                    <b>Boom Angle:</b> It is the minimum angle between the horizontal plan and the boom
+                                    to perform the job.
+                                </li>
+                                <li>
+                                    <b>Boom Length:</b> it is the minimum boom length needed to perform the job.
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./js/index.js">
+    </script>
+</body>
+
+</html>
